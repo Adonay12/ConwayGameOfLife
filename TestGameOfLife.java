@@ -1,3 +1,5 @@
+import javax.swing.JOptionPane;
+
 public class TestGameOfLife {
 
 	public static void setBoard(GameOfLife board) {
@@ -37,42 +39,38 @@ public class TestGameOfLife {
 		System.out.println(life.toString());
 
 		life.nextGeneration();
+		JOptionPane.showMessageDialog(null, "Click OK to continue.");
 		System.out.println("Generation 1:");
 		System.out.println(life);
 		System.out.println();
 
 		life.nextGeneration();
+		JOptionPane.showMessageDialog(null, "Click OK to continue.");
 		System.out.println("Generation 2:");
 		System.out.println(life);
 		System.out.println();
 
 		life.nextGeneration();
+		JOptionPane.showMessageDialog(null, "Click OK to continue.");
 		System.out.println("Generation 3:");
 		System.out.println(life);
 		System.out.println();
 
 		life.nextGeneration();
+		JOptionPane.showMessageDialog(null, "Click OK to continue.");
 		System.out.println("Generation 4:");
 		System.out.println(life);
 		System.out.println();
 
 		life.nextGeneration();
+		JOptionPane.showMessageDialog(null, "Click OK to continue.");
 		System.out.println("Generation 5:");
 		System.out.println(life);
 		System.out.println();
 
 		life.nextGeneration();
+		JOptionPane.showMessageDialog(null, "Click OK to continue.");
 		System.out.println("Generation 6:");
-		System.out.println(life);
-		System.out.println();
-
-		life.nextGeneration();
-		System.out.println("Generation 7:");
-		System.out.println(life);
-		System.out.println();
-
-		life.nextGeneration();
-		System.out.println("Generation 8:");
 		System.out.println(life);
 		System.out.println();
 

@@ -5,7 +5,7 @@ public class MyGameOfLife implements GameOfLife {
 	private static int[][] table;
 	private int rows = 19;
 	private int columns = 19;
-	private int num = 0;
+	private int n = 0;
 
 	public MyGameOfLife() {
 		table = new int[rows][columns];
@@ -88,43 +88,41 @@ public class MyGameOfLife implements GameOfLife {
 					}
 
 				} else {
-					if (i == 0 | i == 18) {
-
-					}
-					for (int check = 0; check < 3; check++) {
-						if (table[i - 1][j + subtractor] == 1) {
-							neighbors++;
-							subtractor++;
-						} else {
-							subtractor++;
+					if (i != 0 && i != 18 && j != 0 && j != 18) {
+						for (int check = 0; check < 3; check++) {
+							if (table[i - 1][j + subtractor] == 1) {
+								neighbors++;
+								subtractor++;
+							} else {
+								subtractor++;
+							}
 						}
-					}
-					subtractor = -1;
-					for (int check = 0; check < 3; check++) {
-						if (table[i][j + subtractor] == 1) {
-							neighbors++;
-							subtractor++;
-						} else {
-							subtractor++;
+						subtractor = -1;
+						for (int check = 0; check < 3; check++) {
+							if (table[i][j + subtractor] == 1) {
+								neighbors++;
+								subtractor++;
+							} else {
+								subtractor++;
+							}
 						}
-					}
-					subtractor = -1;
-					for (int check = 0; check < 3; check++) {
-						if (table[i + 1][j + subtractor] == 1) {
-							neighbors++;
-							subtractor++;
-						} else {
-							subtractor++;
+						subtractor = -1;
+						for (int check = 0; check < 3; check++) {
+							if (table[i + 1][j + subtractor] == 1) {
+								neighbors++;
+								subtractor++;
+							} else {
+								subtractor++;
+							}
 						}
+						subtractor = -1;
+						if (neighbors == 3) {
+							nextGen[i][j] = 1;
+						} else {
+							nextGen[i][j] = 0;
+						}
+						neighbors = 0;
 					}
-					subtractor = -1;
-					if (neighbors == 3) {
-						nextGen[i][j] = 1;
-					} else {
-						nextGen[i][j] = 0;
-					}
-					neighbors = 0;
-
 				}
 			}
 		}
